@@ -13,13 +13,25 @@ import (
 // convertCmd represents the convert command
 var convertCmd = &cobra.Command{
 	Use:   "convert",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Convert a markdown file to pdf.",
+	Long: `
+pdfiler convert [flags] <markdown_file>
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+Examples:
+
+Convert a Markdown File to PDF:
+
+	pdfiler convert example.md
+
+This generates 'example.pdf' in the current directory.
+
+Specify Output Filename:
+
+	pdfiler convert example.md -o custom_name.pdf
+
+Set Output Directory
+
+	pdfiler convert example.md -d ./output`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("convert called")
 	},
